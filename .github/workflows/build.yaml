@@ -25,7 +25,7 @@ jobs:
       # A matrix of Dockerfile paths and associated tags
       # Dockerfile in root builds to tag latest
       matrix:
-        dockerfile: [docker-vice/Dockerfile, sha-]
+        dockerfile: [[docker-vice/Dockerfile, sha-]]
     steps:
       - name: Get short SHA
         id: shorty

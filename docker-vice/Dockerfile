@@ -21,6 +21,62 @@ SHELL ["/bin/bash", "-c"]
 
 WORKDIR /tmp
 
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends --no-install-suggests \
+    apt-utils \
+    build-essential \
+    bison \
+    bzip2 \
+    curl \
+    flex \
+    gdal-bin \
+    git \
+    gnupg2 \
+    htop \
+    language-pack-en-base \
+    libbz2-dev \
+    libcairo2 \
+    libcairo2-dev \
+    libcurl4-gnutls-dev \
+    libfftw3-bin \
+    libfftw3-dev \
+    libfreetype6-dev \
+    libgdal-dev \
+    libgeos-dev \
+    libgsl0-dev \
+    libjpeg-dev \
+    libjsoncpp-dev \
+    libnetcdf-dev \
+    libncurses5-dev \
+    libopenblas-base \
+    libopenblas-dev \
+    libopenjp2-7 \
+    libopenjp2-7-dev \
+    libpnglite-dev \
+    libpq-dev \
+    libproj-dev \
+    libpython3-all-dev \
+    libsqlite3-dev \
+    libtiff-dev \
+    libzstd-dev \
+    locales \
+    mesa-common-dev \
+    moreutils \
+    ncurses-bin \
+    netcdf-bin \
+    nodejs \
+    proj-bin \
+    proj-data \
+    software-properties-common \
+    sqlite3 \
+    subversion \
+    unzip \
+    vim \
+    wget \
+    zip \
+    zlib1g-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | apt-key add - && \
     echo "deb [arch=amd64] https://packages.irods.org/apt/ bionic main" > /etc/apt/sources.list.d/renci-irods.list && \
